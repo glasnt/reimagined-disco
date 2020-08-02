@@ -9,9 +9,29 @@ So I'm thinking...
 
 So in theory you can make `ih` display cross-stitch charts in coloured terminal output if you curl a hosted version. 
 
+## Notes
+
+Terminal pixels probably aren't square. Hack: in the 'render' mode, the image is converted to a more visually pleasing aspect ratio. If it's not spaces are used to attempt the same without distorting the exact pixels.
+
 ## Progress
 
-Working on an API for formatting output. 
+
+```
+curl /
+
+ > outputs a test of the colourisation system
+
+curl /img/(filename)
+
+ > outputs the local filename to terminal colorised output. 
+
+Options: 
+
+ * render: if true, renders a full image. If false, renders a stitchable chart.
+
+e.g. curl localhost:8080/img/test_image.png
+
+```
 
 Todo: 
 
